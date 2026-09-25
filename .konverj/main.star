@@ -52,18 +52,14 @@ lint = standard(
     steps = [script("lint", "echo 'no lint errors'")],
 )
 
-# Declared with build_config() rather than standard(), because the pinned
-# library's helper predates failure conditions and does not pass them through.
-#
 # A test runner that reports failures and still exits zero would otherwise
 # pass the chain. stop_build is off so the whole report reaches the log first.
-unit = build_config(
+unit = standard(
     id = "web-unit",
     name = "Unit tests",
     project = "web",
     depends_on = [snapshot(compile)],
     steps = [script("test", "echo '12 passed, 0 failed'")],
-    timeout_seconds = 1800,
     failure_conditions = [{
         "kind": "regex",
         "pattern": "[1-9][0-9]* failed",

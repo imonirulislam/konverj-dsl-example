@@ -12,5 +12,5 @@ library(
     # point at different code under the same name. Konverj checks this out and
     # compares HEAD against it afterwards. Upgrading is an edit here, which is
     # a reviewable commit.
-    commit = "54476e4619faa6510c095ce2b64ae1ea07885a0f",
+    commit = "e1324a255a0e6ccac1e084b43fa0cb4283e05711",
 )
