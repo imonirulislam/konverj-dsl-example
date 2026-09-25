@@ -62,7 +62,7 @@ unit = build_config(
     name = "Unit tests",
     project = "web",
     depends_on = [snapshot(compile)],
-    steps = [script("test", "echo '11 passed, 1 failed'")],
+    steps = [script("test", "echo '12 passed, 0 failed'")],
     timeout_seconds = 1800,
     failure_conditions = [{
         "kind": "regex",
